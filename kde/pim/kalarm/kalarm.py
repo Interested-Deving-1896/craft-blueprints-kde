@@ -13,8 +13,10 @@ class subinfo(info.infoclass):
         self.buildDependencies["kde/frameworks/extra-cmake-modules"] = None
         self.runtimeDependencies["libs/qt/qtbase"] = None
         self.runtimeDependencies["kde/frameworks/tier1/ki18n"] = None
+        self.runtimeDependencies["kde/frameworks/tier1/kcalendarcore"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kcodecs"] = None
         self.runtimeDependencies["kde/frameworks/tier2/kcompletion"] = None
+        self.runtimeDependencies["kde/frameworks/tier2/kcontacts"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kcoreaddons"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kconfig"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kdbusaddons"] = None
@@ -24,6 +26,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["kde/frameworks/tier3/kio"] = None
         self.runtimeDependencies["kde/frameworks/tier2/kjobwidgets"] = None
         self.runtimeDependencies["kde/frameworks/tier3/knewstuff"] = None
+        self.runtimeDependencies["kde/frameworks/tier3/knotifyconfig"] = None
         self.runtimeDependencies["kde/frameworks/tier3/kservice"] = None
         self.runtimeDependencies["kde/frameworks/tier3/kwallet"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kwidgetsaddons"] = None
@@ -32,6 +35,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["kde/frameworks/tier3/ktextwidgets"] = None
         self.runtimeDependencies["kde/frameworks/tier2/kauth"] = None
         self.runtimeDependencies["kde/frameworks/tier2/kmime"] = None
+        self.runtimeDependencies["kde/pim/kcalutils"] = None
         self.runtimeDependencies["kde/pim/kpimtextedit"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kholidays"] = None
         self.runtimeDependencies["kde/pim/kidentitymanagement"] = None
