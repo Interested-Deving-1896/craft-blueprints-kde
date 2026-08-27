@@ -23,7 +23,6 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["virtual/base"] = None
         self.runtimeDependencies["libs/qt/qtbase"] = None
         self.runtimeDependencies["libs/qt/qtdeclarative"] = None
-        self.runtimeDependencies["libs/qt/qtnetworkauth"] = None
 
         self.runtimeDependencies["kde/frameworks/tier1/breeze-icons"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kconfig"] = None
@@ -35,11 +34,11 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["kde/frameworks/tier3/kiconthemes"] = None
         self.runtimeDependencies["kde/frameworks/tier3/kio"] = None
         self.runtimeDependencies["kde/frameworks/tier3/qqc2-desktop-style"] = None
+        self.runtimeDependencies["kde/libs/kirigami-app-components"] = None
         self.runtimeDependencies["kde/plasma/breeze"] = None
         self.runtimeDependencies["kde/unreleased/kirigami-addons"] = None
 
         self.runtimeDependencies["qt-libs/qcoro"] = None
-        self.runtimeDependencies["qt-libs/qtkeychain"] = None
 
         self.runtimeDependencies["libs/bbppairings"] = None
 
@@ -47,6 +46,8 @@ class subinfo(info.infoclass):
 class Package(CraftPackageObject.get("kde").pattern):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+        self.subinfo.options.configure.args += ["-DBUILD_DOCS=OFF"]
 
     def createPackage(self):
         self.defines["shortcuts"] = [
