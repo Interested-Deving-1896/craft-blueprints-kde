@@ -73,7 +73,6 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["kde/frameworks/tier1/karchive"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kconfig"] = None
         self.runtimeDependencies["kde/frameworks/tier1/ki18n"] = None
-        self.runtimeDependencies["kde/frameworks/tier1/sonnet"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kcoreaddons"] = None
         self.runtimeDependencies["kde/frameworks/tier1/syntax-highlighting"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kuserfeedback"] = None
@@ -83,7 +82,6 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["kde/frameworks/tier3/kdeclarative"] = None
         self.runtimeDependencies["kde/frameworks/tier3/kio"] = None
         self.runtimeDependencies["kde/frameworks/tier3/kparts"] = None
-        self.runtimeDependencies["kde/frameworks/tier3/knewstuff"] = None
         self.runtimeDependencies["kde/frameworks/tier3/kiconthemes"] = None
         self.runtimeDependencies["kde/plasma/breeze"] = None
         if not CraftCore.compiler.isMacOS:
@@ -255,14 +253,13 @@ class Package(CMakePackageBase):
 
             # Copy entitlements next to .app for signing
             entitlementsSource = self.sourceDir() / "labplot.entitlements"
-            CraftCore.log.info(f"preArchive: sourceDir={self.sourceDir()}, entitlementsSource.exists()={entitlementsSource.exists()}")
-
             if entitlementsSource.exists():
                 entitlementsDest = appPath.parent / "labplot.entitlements"
                 utils.copyFile(entitlementsSource, entitlementsDest, linkOnly=False)
                 CraftCore.log.info(f"Copied entitlements next to .app: {entitlementsDest}")
             else:
                 CraftCore.log.warning(f"Entitlements source not found at: {entitlementsSource}")
+
             # if not utils.copyFile(
             #    archiveDir / "Applications/KDE/cantor_pythonserver.app/Contents/MacOS/cantor_pythonserver",
             #    appPath / "Contents/MacOS",
