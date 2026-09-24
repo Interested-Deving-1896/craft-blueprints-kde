@@ -23,6 +23,7 @@ class subinfo(info.infoclass):
         self.buildDependencies["python-modules/setuptools"] = None
         self.buildDependencies["python-modules/packaging"] = None
         self.runtimeDependencies["libs/qt6/qtbase"] = None
+        self.runtimeDependencies["libs/qt6/qtremoteobjects"] = None
         # required by shiboken6
         self.buildDependencies["libs/llvm"] = None
 
@@ -45,6 +46,6 @@ class Package(PipPackageBase):
             )
         else:
             return utils.system(
-                ["python", "setup.py", "install", f"--prefix={imageDir}", "--verbose-build", "--disable-pyi", "--skip-mypy-test", "--skip-modules=Positioning,WebEngineCore,WebEngineWidgets,WebEngineQuick,WebChannel,Quick,Qml,UiTools"],
+                ["python", "setup.py", "install", f"--prefix={imageDir}", "--verbose-build", "--disable-pyi", "--skip-mypy-test", "--skip-modules=Positioning,WebEngineCore,WebEngineWidgets,WebEngineQuick,WebChannel,Quick,QuickControls2,QuickTest,QuickWidgets,Qml,UiTools"],
                 cwd=sourceDir
             )
